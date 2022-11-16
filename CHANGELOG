@@ -1,0 +1,9 @@
+#1.0
+Base version. Reads only config files. Format of config files is:
+PARAM1=VALUE
+PARAM2=VALUE
+...
+...
+PARAMn=VALUE
+
+Empty values will NOT be ignored. Only assignment operator supported is '='
