@@ -1,6 +1,6 @@
 import os
 
-def getconfig(config_file, verbose:bool = False):
+def getconfig(config_file, extension:str = None, verbose:bool = False):
   params={}
   line_sep=os.linesep #retrieves the line separator for this OS
   file = open(config_file, 'r') #open config file with variables
