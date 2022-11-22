@@ -1,4 +1,12 @@
-#1.0
+#v1.1
+Added function getlines()
+Modified body of function getconfig():
+    Empty lines in the config file will be completely ignored.
+    The function now has 4 arguments, three of which are optional.
+    Skipping empty values is now supported, if indicated when calling the function.
+    Assignment operator can be indicated during function call. Default is '='
+
+#v1.0
 Base version. Reads only config files. Format of config files is:
 PARAM1=VALUE
 PARAM2=VALUE
