@@ -243,4 +243,5 @@ $RECYCLE.BIN/
 test.py
 config
 test
+mytestfile*
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,python,dotenv

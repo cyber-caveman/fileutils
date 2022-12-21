@@ -76,3 +76,5 @@ def getlines(source_file:str, strip_blanks:bool = False, verbose:bool = False):
     print(f"ERROR!!: File {source_file} not found, make sure that the path is correct.")
 
   return lines
+
+  
