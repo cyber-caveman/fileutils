@@ -1,3 +1,8 @@
+#v1.2.0
+-Made fileutils.py a separate executable script that calls other python modules. It also acts as a library, calling the other modules in the repo.
+-Created getconfig.py and getlines.py to act as separate modules that may be called from fileutils.py, or used individually in other projects.
+-Added diffiles.py as an executable script, compare function available to other scripts through fileutils.py
+
 #v1.1
 Added function getlines()
 Modified body of function getconfig():

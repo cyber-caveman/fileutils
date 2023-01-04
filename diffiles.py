@@ -1,6 +1,6 @@
 import sys
 
-def compare_files(file1, file2, mode):
+def compare_files(file1, file2, mode: str):
     # Open the files in read-only mode
     with open(file1, 'r') as f1, open(file2, 'r') as f2:
         # Read the lines from both files
@@ -46,4 +46,5 @@ if __name__ == '__main__':
 
     # Compare the files
     compare_files(file1, file2, mode)
+
 
