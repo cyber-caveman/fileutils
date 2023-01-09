@@ -15,7 +15,8 @@ def getconfig(config_file:str, assignment_op:str = "=", skip_empty_values:bool =
         line_num += 1
 
         if line.strip(line_sep).strip() == '':  #empty line, ignored
-          print(f"line {line_num} is empty....ignoring")  #DEBUG
+          if verbose == True: #verbose
+            print(f"line {line_num} is empty....ignoring")  #DEBUG
           continue
         #Check if the line contains the assignment operator
         if not line.__contains__(assignment_op):

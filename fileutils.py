@@ -12,7 +12,16 @@ USAGE = '''
 Usage: python fileutils.py <function> <arg1> <arg2> ... <arg n>
 
 Available functions:
-  diffiles: Compare the contents of two files and print the differences
+    diffiles: Compare the contents of two files, line by line, and print the differences
+        params: file1, file2, mode
+            Where mode is either "diff", "same", or "merged"
+                diff: prints the lines that are different
+                same: prints lines that match
+                merged: prints all common and uncommon lines, uncommon lines printed side by side
+    getconfig: Returns parameters in a config file passed as reference, formatted as dictionary
+        params: config_file, assignment_op, skip_empty_values [False | True], verbose [False | True]
+    getlines: Returns a list containing the lines of a file, stripping the leading and trailing whitespaces, as well as the os new line separator if indicated with "strip_blanks"
+        params: source_file, strip_blanks [False | True], verbose [False | True]
 '''
 
 def main():
@@ -32,6 +41,36 @@ def main():
     if function_name == 'diffiles':
         from diffiles import compare_files
         compare_files(*func_args)
+    elif function_name == 'getconfig':
+        try:
+            if func_args[2] == 'False' or func_args[1] == 'false':
+                func_args[2] = False
+            elif func_args[2] == 'True' or func_args[1] == 'true':
+                func_args[2] = True
+            if func_args[3] == 'False' or func_args[1] == 'false':
+                func_args[3] = False
+            elif func_args[3] == 'True' or func_args[1] == 'true':
+                func_args[3] = True
+            params = getconfig(*func_args)
+        except IndexError:
+            params = getconfig(*func_args)
+
+        print(params)
+    elif function == 'getlines':
+        try:
+            if func_args[1] == 'False' or func_args[1] == 'false':
+                func_args[1] = False
+            elif func_args[1] == 'True' or func_args[1] == 'true':
+                func_args[1] = True
+            if func_args[2] == 'False' or func_args[1] == 'false':
+                func_args[2] = False
+            elif func_args[2] == 'True' or func_args[1] == 'true':
+                func_args[2] = True
+            lines = getlines(*func_args)
+            print(lines)
+        except IndexError:
+            lines = getlines(*func_args)
+            print(lines)
     else:
         print(f'Error: Invalid function name: {function_name}')
         print(USAGE)
