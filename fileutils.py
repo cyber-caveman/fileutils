@@ -1,4 +1,4 @@
-#fileutils v1.2.0
+#fileutils v1.2.1
 
 import sys
 import os
@@ -23,6 +23,14 @@ Available functions:
     getlines: Returns a list containing the lines of a file, stripping the leading and trailing whitespaces, as well as the os new line separator if indicated with "strip_blanks"
         params: source_file, strip_blanks [False | True], verbose [False | True]
 '''
+
+#Gets absolute path of file from a relative path
+def get_file_abs_path(file_path: str):
+    abs_path = file_path
+    if not os.path.isabs(abs_path):     #Check if the user provided a relative path
+        path = os.path.join(os.path.dirname(__file__), abs_path)    #build the absolute path
+        abs_path = os.path.abspath(path)    #get the absolute path as a string
+    return abs_path
 
 def main():
     # Parse the command-line arguments
